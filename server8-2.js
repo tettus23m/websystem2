@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
 });
 
 server.get('players_creat', function( req, res ) {
-    let name = res.query.||'';
+    let name = res.query.person ||'';
     if ( name.length !=0 ) {
         let query ="insert int player(name)values('" + name + ');";
         console.log( query );
@@ -21,7 +21,7 @@ server.get('players_creat', function( req, res ) {
                 console.log('Query Error');
         }
         }
-        res.render( 'sql2.ejs', { content: rows });
+        res.render( 'basehtml.ejs', { content: rows });
     });
 });
 
