@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
     database: 'web'
 });
 
-server.get('/', function( req, res ) {
+server.get('players_creat', function( req, res ) {
     let sorting = req.query.sorting || '人口';
     let number = req.query.number || 10;
     let query = 'select id, 都道府県, ' + sorting + ' from example order by ' + sorting + ' desc limit ' + number + ';';
