@@ -12,11 +12,11 @@ var connection = mysql.createConnection({
 });
 
 server.get('/', function( req, res ) {
-    connection.query('select id, racename from result where year=2019;', (error, rows, fields) => {
+    connection.query('select id, pople from people order by count('pople_id1');', (error, rows, fields) => {
         if( error ) {
             console.log('Query Error');
         }
-        res.render( 'sql.ejs', { content: rows });
+        res.render( 'player_record.ejs', { content: rows });
     });
 });
 
