@@ -8,8 +8,8 @@
         <% for( let result of content ) { %>
         <tr>
             <td><%= result.id %></td>
-            <td><%= result['racename'] %></td>
             <td><%= result['pople'] %></td>
+            <td><%= result[count('pople_id')] %></td>
         </tr>
         <% } %>
     </table>
